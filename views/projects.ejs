@@ -1,0 +1,16 @@
+<%- include("_header") -%>
+
+<h1>List of projects</h1>
+
+<ul>
+
+  <% for (const project of model) { %>
+    <li>
+      <%= project.PROJECT_NAME %>
+      <em>(<%= project.CREATED_BY %>)</em>
+    </li>
+  <% } %>
+
+</ul>
+
+<%- include("_footer") -%>
