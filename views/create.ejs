@@ -1,6 +1,9 @@
-<%- include("_header") -%>
+<%- include("partials/_header") -%>
 
-<h1>Add a project to the list</h1>
+<div class="jumbotron text-center">
+  <div class="container">
+    <i class="fas fa-key fa-6x"></i>
+    <h1 class="display-3">Add a project to the list</h1>
 
 <form action="/create" method="post">
   <div class="form-horizontal">
@@ -17,4 +20,9 @@
   </div>
 </form>
 
-<%- include("_footer") -%>
+<hr>
+    <a class="btn btn-light btn-lg" href="/logout" role="button">Log Out</a>
+  </div>
+</div>
+
+<%- include("partials/_footer") -%>

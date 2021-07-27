@@ -1,45 +1,53 @@
-<%- include("_header") -%>
+<%- include("partials/_header") -%>
 
-<h1>List of projects (<%= model.length %>)</h1>
+<div class="jumbotron text-center">
+  <div class="container">
+    <i class="fas fa-key fa-6x"></i>
+    <h1 class="display-3">List of projects (<%= model.length %>)</h1>
 
-<div class="table-responsive-sm">
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>S. date</th>
-        <th>T.e. date</th>
-        <th>A.e. date</th>
-        <th>Created On</th>
-        <th>Created By</th>
-        <th>Modified On</th>
-        <th>Modified By</th>
-        <th class="d-print-none">
-          <a class="btn btn-sm btn-success" href="/create">Add project</a>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <% for (const project of model) { %>
-        <tr>
-          <td><%= project.PROJECT_ID %></td>
-          <td><%= project.PROJECT_NAME %></td>
-          <td><%= project.START_DATE %></td>
-          <td><%= project.TARGET_END_DATE %></td>
-          <td><%= project.ACTUAL_END_DATE %></td>
-          <td><%= project.CREATED_ON %></td>
-          <td><%= project.CREATED_BY %></td>
-          <td><%= project.MODIFIED_ON %></td>
-          <td><%= project.MODIFIED_BY %></td>
-          <td class="d-print-none">
-            <a class="btn btn-sm btn-warning" href="/edit/<%= project.PROJECT_ID %>">Update</a>
-            <a class="btn btn-sm btn-danger" href="/delete/<%= project.PROJECT_ID %>">Delete</a>
-          </td>
-        </tr>
-      <% } %>
-    </tbody>
-  </table>
+    <div class="table-responsive-sm">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>S. date</th>
+            <th>T.e. date</th>
+            <th>A.e. date</th>
+            <th>Created On</th>
+            <th>Created By</th>
+            <th>Modified On</th>
+            <th>Modified By</th>
+            <th class="d-print-none">
+              <a class="btn btn-sm btn-success" href="/create">Add project</a>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (const project of model) { %>
+            <tr>
+              <td><%= project.PROJECT_ID %></td>
+              <td><%= project.PROJECT_NAME %></td>
+              <td><%= project.START_DATE %></td>
+              <td><%= project.TARGET_END_DATE %></td>
+              <td><%= project.ACTUAL_END_DATE %></td>
+              <td><%= project.CREATED_ON %></td>
+              <td><%= project.CREATED_BY %></td>
+              <td><%= project.MODIFIED_ON %></td>
+              <td><%= project.MODIFIED_BY %></td>
+              <td class="d-print-none">
+                <a class="btn btn-sm btn-warning" href="/edit/<%= project.PROJECT_ID %>">Update</a>
+                <a class="btn btn-sm btn-danger" href="/delete/<%= project.PROJECT_ID %>">Delete</a>
+              </td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+
+    <hr>
+    <a class="btn btn-light btn-lg" href="/logout" role="button">Log Out</a>
+  </div>
 </div>
 
-<%- include("_footer") -%>
+<%- include("partials/_footer") -%>
